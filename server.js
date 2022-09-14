@@ -1,7 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const { MongoClient } = require('mongodb');
-const User = require('./models/user')
 
 
 const userRouter = require("./routes/api/user.js") 
@@ -11,9 +9,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 //connect to mongodb
-const dbURI = "mongodb+srv://mateoApp:Chillen16@socialmediaapp.oviqcwt.mongodb.net/?retryWrites=true&w=majority"
+ const dbURI = "mongodb://localhost:27017/socialmedia "
 
-app.use ('/user', userRouter)  
+ 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
