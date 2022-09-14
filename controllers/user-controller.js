@@ -1,10 +1,11 @@
-const { user } = require('../models/user')
-
+const mongoose =require('mongoose')
+const User = require('../models/user')
+ 
 
 const userController = {
     // get all users
     getAllUsers(req, res) {
-        user.find({})
+        User.find({})
         .populate({
             path: 'users',
             select: '-__v'
@@ -18,7 +19,7 @@ const userController = {
 
       // get one User by id
   getUserById({ params }, res) {
-    user.findById({ _id: params.id })
+    User.findById({ _id: params.id })
       .populate({
         path: 'user',
         
@@ -34,14 +35,14 @@ const userController = {
 
     // create user
     createUser({ body }, res) {
-        user.create(body)
+        User.create(body)
             .then(dbUserData => res.json(dbUserData))
             .catch(err => res.json(err));
     },
 
     // update User by id
     updateUser({ params, body }, res) {
-        user.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
+        User.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
             .then(dbUserData => {
                 if (!dbUserData) {
                     res.status(404).json({ message: 'No User found with this id!' });
