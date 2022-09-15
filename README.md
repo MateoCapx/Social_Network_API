@@ -25,5 +25,15 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 
 
+
+
 Screen-recording video shows GET routes to return all users and all thoughts 
 https://watch.screencastify.com/v/mUrhSSShSzFwyk2sUo3W
+
+
+
+
+
+
+Screen-recording video shows GET routes to return a single user and a single thought being tested 
+https://watch.screencastify.com/v/ZWEL4IcAp5Dm012zWPir
