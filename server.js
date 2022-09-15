@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+const db = require('./config/connection');
 
 const userRouter = require("./routes/api/user.js") 
 
@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 //connect to mongodb
- const dbURI = "mongodb://localhost:27017/socialmedia "
+//  const dbURI = "mongodb://localhost:27017/socialmedia "
 
  
 
@@ -56,12 +56,12 @@ app.use(require('./routes'));
 
 
 
-// creates connection to Database
-mongoose.connect(process.env.MONGODB_URI || dbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then((result) => console.log('connected to db'))
-    .catch((err) => console.log(err));
+// // creates connection to Database
+// mongoose.connect(process.env.MONGODB_URI || dbURI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }).then((result) => console.log('connected to db'))
+//     .catch((err) => console.log(err));
 
 // Use this to log mongo queries being executed!
 mongoose.set('debug', true);

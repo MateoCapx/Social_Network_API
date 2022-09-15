@@ -1,9 +1,10 @@
 // const faker = require('faker');
 const userSeeds = require('./userSeed.json');
 const thoughtSeeds = require('./thoughtSeed.json');
-const db = require('../server');
+const db = require('../config/connection');
 const { Thought, User } = require('../models');
 
+console.log(db)
 db.once('open', async () => {
   try {
     await Thought.deleteMany({});
