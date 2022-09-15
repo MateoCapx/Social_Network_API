@@ -1,4 +1,44 @@
-// const router = require('express').Router();
+const router = require('express').Router();
+ 
+
+const {
+  getAllUsers,
+  getUserById,
+  createUser,
+  updateUser,
+}  = require('../../controllers/user-controller');
+
+// /api/users
+router
+  .route('/')
+  .get(getAllUsers)
+  .post(createUser);
+
+// /api/users/:id
+router
+  .route('/:id')
+  .get(getUserById)
+  .put(updateUser)
+
+module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // const router = require('express').Router();
 // const User = require('../../models/user')
 
 
@@ -45,27 +85,5 @@
 // module.exports = router;
 
 
-const router = require('express').Router();
- 
 
-const {
-  getAllUsers,
-  getUserById,
-  createUser,
-  updateUser,
-}  = require('../../controllers/user-controller');
 
-// /api/users
-router
-  .route('/')
-  .get(getAllUsers)
-  .post(createUser);
-
-// /api/users/:id
-router
-  .route('/:id')
-  .get(getUserById)
-  .put(updateUser)
- 
-
-module.exports = router;

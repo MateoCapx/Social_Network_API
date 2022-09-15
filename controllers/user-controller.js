@@ -6,10 +6,6 @@ const userController = {
     // get all users
     getAllUsers(req, res) {
         User.find({})
-        .populate({
-            path: 'users',
-            select: '-__v'
-          })
             .then(dbUserData => res.json(dbUserData))
             .catch(err => {
                 console.log(err);
@@ -20,11 +16,6 @@ const userController = {
       // get one User by id
   getUserById({ params }, res) {
     User.findById({ _id: params.id })
-      .populate({
-        path: 'user',
-        
-      })
-      .select('-__v')
       .then(dbUserData => res.json(dbUserData))
       .catch(err => {
         console.log(err);

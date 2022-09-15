@@ -15,37 +15,31 @@ const UserSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+      match: [/.+@.+\..+/, 'Must match an email address!']
     },
-    // thoughts: {
-     
-    // },
-    // friends: {
+    thoughts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'thought'
+      }
+    ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ]
     
-
-    // },
   },
-  
-//   {
-//     toJSON: {
-//       virtuals: true,
-//       getters: true
-//     },
-//     // prevents virtuals from creating duplicate of _id as `id`
-//     id: false
-//   },
-  
+
  {timestamps:true});
 
+ userSchema.virtual('friendCount').get(function() {
+  return this.friends.length;
+});
 
 
-// get total count of comments and replies on retrieval
-// PizzaSchema.virtual('commentCount').get(function() {
-//   return this.comments.reduce(
-//     (total, comment) => total + comment.replies.length + 1,
-//     0
-//   );
-// });
+
 
 const User = model('User',UserSchema)
 
