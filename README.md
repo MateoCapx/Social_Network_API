@@ -35,5 +35,23 @@ https://watch.screencastify.com/v/mUrhSSShSzFwyk2sUo3W
 
 
 
+
+
 Screen-recording video shows GET routes to return a single user and a single thought being tested 
 https://watch.screencastify.com/v/ZWEL4IcAp5Dm012zWPir
+
+
+
+
+
+
+
+
+
+Screen-recording video shows the POST, PUT, and DELETE routes for users being tested in Insomnia:
+https://watch.screencastify.com/v/Js2TSzovEWbcVXRRtzkj
+
+
+
+
+
