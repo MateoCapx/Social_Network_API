@@ -8,10 +8,6 @@ const userRouter = require("./routes/api/user.js")
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-//connect to mongodb
-//  const dbURI = "mongodb://localhost:27017/socialmedia "
-
- 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -56,13 +52,7 @@ app.use(require('./routes'));
 
 
 
-// // creates connection to Database
-// mongoose.connect(process.env.MONGODB_URI || dbURI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// }).then((result) => console.log('connected to db'))
-//     .catch((err) => console.log(err));
-
+ 
 // Use this to log mongo queries being executed!
 mongoose.set('debug', true);
 app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));

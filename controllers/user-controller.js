@@ -1,6 +1,6 @@
-const mongoose =require('mongoose')
+const mongoose = require('mongoose')
 const User = require('../models/user')
- 
+
 
 const userController = {
     // get all users
@@ -13,15 +13,15 @@ const userController = {
             });
     },
 
-      // get one User by id
-  getUserById({ params }, res) {
-    User.findById({ _id: params.id })
-      .then(dbUserData => res.json(dbUserData))
-      .catch(err => {
-        console.log(err);
-        res.sendStatus(400);
-      });
-  },
+    // get one User by id
+    getUserById({ params }, res) {
+        User.findById({ _id: params.id })
+            .then(dbUserData => res.json(dbUserData))
+            .catch(err => {
+                console.log(err);
+                res.sendStatus(400);
+            });
+    },
 
 
     // create user
@@ -43,6 +43,13 @@ const userController = {
             })
             .catch(err => res.json(err));
     },
+
+    // delete User
+    deleteUser({ params }, res) {
+        User.findOneAndDelete({ _id: params.id })
+            .then(dbUserData => res.json(dbUserData))
+            .catch(err => res.json(err));
+    }
 
 }
 
