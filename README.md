@@ -55,3 +55,6 @@ https://watch.screencastify.com/v/Js2TSzovEWbcVXRRtzkj
 
 
 
+
+Screen-recording video shows the POST, PUT, and DELETE routes for thoughts being tested in Insomnia
+https://watch.screencastify.com/v/96wRUtYY2H2LxR8zG85b
